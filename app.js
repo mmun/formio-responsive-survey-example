@@ -302,6 +302,7 @@
         type: "textfield",
         key: "patientName",
         label: "Patient name",
+        placeholder: "Enter patient full name",
         input: true
       },
       {
@@ -329,7 +330,7 @@
     formElement.innerHTML = "";
 
     Formio.createForm(formElement, schema).then(function onFormReady(form) {
-      submissionElement.textContent = "Fill out the form to inspect the submission payload.";
+      submissionElement.textContent = "Response data will appear here as the form is completed.";
 
       form.on("change", function onChange(event) {
         submissionElement.textContent = JSON.stringify(event.data, null, 2);
