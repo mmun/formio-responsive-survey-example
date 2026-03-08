@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form.io Responsive Survey Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.form.io/formiojs/formio.full.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Form.io demo</p>
+        <h1>Responsive PHQ-style survey</h1>
+        <p class="lede">
+          Desktop uses the standard survey grid. Mobile switches to one question
+          per screen with step navigation.
+        </p>
+      </section>
+
+      <section class="panel">
+        <div class="panel__header">
+          <h2>Preview</h2>
+          <p>
+            Resize the viewport to see the responsive survey fork in action.
+            The schema is defined in <code>app.js</code>.
+          </p>
+        </div>
+        <div id="form"></div>
+        <pre id="submission" class="submission"></pre>
+      </section>
+    </main>
+
+    <script src="https://cdn.form.io/formiojs/formio.full.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

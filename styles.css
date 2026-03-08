@@ -1,0 +1,193 @@
+:root {
+  --page-bg: linear-gradient(180deg, #f3efe7 0%, #ece7dd 100%);
+  --panel-bg: rgba(255, 255, 255, 0.92);
+  --panel-border: rgba(39, 48, 33, 0.1);
+  --ink: #223127;
+  --muted: #6a7362;
+  --accent: #2f5d50;
+  --accent-soft: #dfe9e3;
+  --accent-strong: #17352d;
+  --shadow: 0 18px 60px rgba(35, 36, 28, 0.08);
+  --radius: 24px;
+  --mobile-radius: 20px;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--page-bg);
+}
+
+.page {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 72px;
+}
+
+.hero {
+  padding: 12px 8px 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font: 600 0.75rem/1.2 "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.hero h1,
+.panel__header h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  line-height: 0.98;
+}
+
+.lede,
+.panel__header p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font: 400 1rem/1.6 "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.panel {
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.submission {
+  margin: 24px 0 0;
+  padding: 18px;
+  overflow: auto;
+  color: #f7f4ec;
+  background: #1e2b24;
+  border-radius: 16px;
+  font: 500 0.9rem/1.5 "SFMono-Regular", Consolas, monospace;
+}
+
+.phq-mobile-survey {
+  margin-top: 8px;
+  padding: 18px;
+  background: linear-gradient(180deg, #f9f5ed 0%, #f2ede3 100%);
+  border: 1px solid rgba(34, 49, 39, 0.08);
+  border-radius: var(--mobile-radius);
+}
+
+.phq-mobile-survey__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.phq-mobile-survey__step {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font: 700 0.76rem/1.2 "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.phq-mobile-survey__dots {
+  display: flex;
+  gap: 8px;
+}
+
+.phq-mobile-survey__dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(34, 49, 39, 0.14);
+  border-radius: 999px;
+}
+
+.phq-mobile-survey__dot.is-active {
+  background: var(--accent);
+}
+
+.phq-mobile-survey__card {
+  padding: 22px 18px;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 18px;
+}
+
+.phq-mobile-survey__question {
+  margin: 0 0 18px;
+  font: 500 1.32rem/1.25 "Iowan Old Style", "Palatino Linotype", serif;
+}
+
+.phq-mobile-survey__options {
+  display: grid;
+  gap: 12px;
+}
+
+.phq-mobile-survey__option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid rgba(47, 93, 80, 0.16);
+  border-radius: 14px;
+  transition: transform 120ms ease, border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.phq-mobile-survey__option:hover {
+  transform: translateY(-1px);
+  border-color: rgba(47, 93, 80, 0.32);
+  box-shadow: 0 10px 18px rgba(34, 49, 39, 0.06);
+}
+
+.phq-mobile-survey__option.is-selected {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+  background: var(--accent-soft);
+}
+
+.phq-mobile-survey__option input {
+  margin: 0;
+}
+
+.phq-mobile-survey__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.phq-mobile-survey__footer .btn {
+  min-width: 110px;
+  border-radius: 999px;
+}
+
+.phq-mobile-survey__footer .btn-primary {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+@media (max-width: 767px) {
+  .page {
+    width: min(100% - 20px, 720px);
+    padding-top: 28px;
+  }
+
+  .panel {
+    padding: 18px;
+    border-radius: 18px;
+  }
+}
